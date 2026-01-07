@@ -1,0 +1,10 @@
+int findDuplicate(int* nums, int numsSize) {
+    int* hash = calloc(100001,sizeof(int));
+    for (int i = 1; i<numsSize;i++){
+        hash[nums[i]]++;
+        if (hash[nums[i]]>=2){
+            return nums[i];
+        }
+    }
+    return nums[0];
+}
