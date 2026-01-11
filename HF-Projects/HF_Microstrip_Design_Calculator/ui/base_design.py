@@ -105,10 +105,10 @@ class BaseDesign:
     def update_mode(self):
         calc_field = self.mode.get()
         for name, entry in self.entries.items():
-            entry.config(state="normal")
+            entry.config(state="normal",bg=ENTRY_BG, fg=ENTRY_FG)
             entry.delete(0, tk.END)
             if name == calc_field:
-                entry.config(state="readonly")
+                entry.config(state="readonly",bg=ENTRY_BG, fg=ENTRY_FG)
 
     # -----------------------------
     # Berechnung
@@ -132,7 +132,7 @@ class BaseDesign:
             e.config(state="normal")
             e.delete(0, tk.END)
             e.insert(0, f"{result:.3f}")
-            e.config(state="readonly", readonlybackground=ENTRY_BG, fg=ENTRY_FG)
+            e.config(state="readonly", bg=ENTRY_FG, fg=ENTRY_BG)
 
         except ValueError:
             show_error(self.parent, "Please enter valid numbers!")
