@@ -106,8 +106,9 @@ class BaseDesign:
         calc_field = self.mode.get()
         for name, entry in self.entries.items():
             entry.config(state="normal",bg=ENTRY_BG, fg=ENTRY_FG)
-            entry.delete(0, tk.END)
+            
             if name == calc_field:
+                entry.delete(0, tk.END)
                 entry.config(state="readonly",bg=ENTRY_BG, fg=ENTRY_FG)
 
     # -----------------------------
@@ -131,7 +132,7 @@ class BaseDesign:
             e = self.entries[calc_field]
             e.config(state="normal")
             e.delete(0, tk.END)
-            e.insert(0, f"{result:.3f}")
+            e.insert(0, f"{result:.6f}")
             e.config(state="readonly", bg=ENTRY_FG, fg=ENTRY_BG)
 
         except ValueError:
