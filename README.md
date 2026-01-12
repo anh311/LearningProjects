@@ -4,6 +4,17 @@ This repository is a collection of various learning projects I'm working on to i
 
 ## Leetcode Challenges
 
-This folder contains my Leetcode solutions, primarily in **C** for performance, and **Python** when needed (e.g., for complex data structures). Problems are organized by topic (e.g., Arrays, Strings, DP).
+This folder contains my Leetcode solutions, primarily in **C**, and **Python** when needed (e.g., for complex data structures). Problems are organized by topic (e.g., Arrays, Strings, DP).
 
 Check out my Leetcode profile: [Leetcode Profile](https://leetcode.com/u/tsuna1324/)
+
+## HF Projects
+
+The HF-Projects folder contains experiments and projects related to **high-frequency (HF) electronics**, with a focus on **microstrip transmission line technology**. Projects include, but are not limited to:  
+
+- Designing, simulating, and testing microstrip-based components and filters  
+- Experiments aimed at understanding HF behavior and practical applications  
+- A computation tool for general HF calculations, which will be continuously expanded  
+- Other HF-related experiments and projects under development  
+
+Explore the folder here: [HF-Projects](HF-Projects)
