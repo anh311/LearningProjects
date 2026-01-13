@@ -1,4 +1,4 @@
-# learning-playground
+# LearningProjects
 
 This repository is a collection of various learning projects I'm working on to improve my skills in different areas such as programming, electronics, and problem-solving. It includes solutions to coding challenges, small electronics projects, and anything else that sparks my curiosity. The goal is to experiment, learn, and document my progress along the way.
 
