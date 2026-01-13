@@ -1,4 +1,3 @@
-# ui/base_design.py
 import tkinter as tk
 from ui_helpers import (
     BG_COLOR, FG_COLOR,
@@ -9,22 +8,7 @@ from ui_helpers import (
 
 class BaseDesign:
     def __init__(self, parent, title, params, modes, calculate_funcs,
-                 image_path=None, image_size=(350,150),param_map=None):
-        """
-        BaseDesign für HF-Designs mit Parametern, Modi (z.B. Z oder w berechnen)
-        und optionalem Bild rechts.
-
-        parent: Tkinter Parent Frame
-        title: Überschrift des Designs
-        params: Liste der Parameter ["Er", "h (mm)", "w (mm)", "Z (Ohm)"]
-        modes: [
-            {"label": "Calculate Z", "key": "Z (Ohm)", "inputs": ["Er","h (mm)","w (mm)"]},
-            {"label": "Calculate w", "key": "w (mm)", "inputs": ["Er","h (mm)","Z (Ohm)"]}
-        ]
-        calculate_funcs: {"Z (Ohm)": func1, "w (mm)": func2}
-        image_path: Optional, Pfad zum Bild
-        image_size: Tuple (width, height) des Bildes
-        """
+                 image_path=None, image_size=(350,150), param_map=None):
         self.parent = parent
         self.params = params
         self.param_map = param_map
@@ -32,10 +16,8 @@ class BaseDesign:
         self.calculate_funcs = calculate_funcs
         self.entries = {}
         self.mode = tk.StringVar(value=modes[0]["key"])
-        self.image = None  # Referenz zum Bild halten
-        self.image_size = image_size  # Standard oder übergeben
-        
-
+        self.image = None
+        self.image_size = image_size
         self._build_ui(title, image_path)
 
     # -----------------------------
@@ -45,30 +27,25 @@ class BaseDesign:
         main = tk.Frame(self.parent, bg=BG_COLOR)
         main.pack(padx=20, pady=20, fill="both", expand=True)
 
-        # Linke Seite: Eingabe + Modus
         left = tk.Frame(main, bg=BG_COLOR)
         left.grid(row=0, column=0, sticky="nw")
 
-        # Überschrift
         tk.Label(left, text=title, font=("Arial", 18, "bold"),
                  bg=BG_COLOR, fg=FG_COLOR).grid(row=0, column=0, columnspan=2, sticky="w", pady=(0,10))
 
         self._create_mode_buttons(left)
         self._create_entries(left)
 
-        # Calculate Button
         create_button(left, "Calculate", self.calculate)\
             .grid(row=len(self.params)+3, column=0, columnspan=2, pady=10)
 
-        # Rechte Seite: Optionales Bild
         if image_path:
             right = tk.Frame(main, bg=BG_COLOR)
             right.grid(row=0, column=1, sticky="ne", padx=20)
-            img = load_design_image(image_path, self.image_size)  # image_size nutzen
+            img = load_design_image(image_path, self.image_size)
             tk.Label(right, image=img, bg=BG_COLOR).pack()
-            self.image = img  # Referenz halten!
+            self.image = img
 
-        # Modus initial aktivieren
         self.update_mode()
 
     # -----------------------------
@@ -100,16 +77,18 @@ class BaseDesign:
             self.entries[p] = e
 
     # -----------------------------
-    # Modus Umschalten: Setzt Felder readonly
+    # Modus Umschalten
     # -----------------------------
     def update_mode(self):
         calc_field = self.mode.get()
         for name, entry in self.entries.items():
-            entry.config(state="normal",bg=ENTRY_BG, fg=ENTRY_FG)
-            
-            if name == calc_field:
+            entry.config(state="normal", bg=ENTRY_BG, fg=ENTRY_FG)
+            # Falls outputs definiert sind, diese Felder readonly setzen
+            mode = next(m for m in self.modes if m["key"] == calc_field)
+            readonly_fields = mode.get("outputs", [calc_field])
+            if name in readonly_fields:
                 entry.delete(0, tk.END)
-                entry.config(state="readonly",bg=ENTRY_BG, fg=ENTRY_FG)
+                entry.config(state="readonly", bg=ENTRY_BG, fg=ENTRY_FG)
 
     # -----------------------------
     # Berechnung
@@ -119,22 +98,30 @@ class BaseDesign:
             calc_field = self.mode.get()
             mode = next(m for m in self.modes if m["key"] == calc_field)
 
-            # Werte einlesen
+            # Eingaben einlesen
             values = {k: float(self.entries[k].get()) for k in mode["inputs"]}
-
             if hasattr(self, "param_map"):
                 values = {self.param_map[k]: v for k, v in values.items()}
 
             # Berechnung durchführen
             result = self.calculate_funcs[calc_field](**values)
 
-            # Ergebnis in gesperrtes Feld schreiben
-            e = self.entries[calc_field]
-            e.config(state="normal")
-            e.delete(0, tk.END)
-            e.insert(0, f"{result:.6f}")
-            e.config(state="readonly", bg=ENTRY_FG, fg=ENTRY_BG)
+            # Ergebnisse eintragen (ein Wert oder Dict)
+            if isinstance(result, dict):
+                for key, val in result.items():
+                    if key in self.entries:
+                        e = self.entries[key]
+                        e.config(state="normal")
+                        e.delete(0, tk.END)
+                        e.insert(0, f"{val:.6f}")
+                        e.config(state="readonly", bg=ENTRY_FG, fg=ENTRY_BG)
+            else:
+                e = self.entries[calc_field]
+                e.config(state="normal")
+                e.delete(0, tk.END)
+                e.insert(0, f"{result:.6f}")
+                e.config(state="readonly", bg=ENTRY_FG, fg=ENTRY_BG)
 
         except ValueError:
+            from ui_helpers import show_error
             show_error(self.parent, "Please enter valid numbers!")
-

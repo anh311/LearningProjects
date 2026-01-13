@@ -1,14 +1,16 @@
 import tkinter as tk
 from tkinter import ttk
 from designs.transmission_line import TransmissionLine
+from designs.wavelength import WaveLength
+from designs.WilkinsonPowerDivider import WilkinsonDivider
 from ui_helpers import BG_COLOR, FG_COLOR, create_label, create_button, create_entry, BUTTON_BG, BUTTON_FG, BUTTON_ACTIVE_BG, BUTTON_ACTIVE_FG, ENTRY_BG, ENTRY_FG
 # -----------------------------
 # Liste aller Designs
 # -----------------------------
 DESIGNS = [
     ("Transmission Line", TransmissionLine),
-    ("Transmission Line", TransmissionLine),
-    ("Transmission Line", TransmissionLine),
+    ("Wavelength", WaveLength),
+    ("Wilkinson Power Divider", WilkinsonDivider),
     ("Transmission Line", TransmissionLine),
     ("Transmission Line", TransmissionLine),
     ("Transmission Line", TransmissionLine),

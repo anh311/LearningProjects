@@ -38,8 +38,8 @@ class TransmissionLine(BaseDesign):
         }
 
         # Optional: Bild rechts
-        image_path = get_image_path("Microstrip.png")  # Pfad zu deinem Bild
-        image_size = (350, 150)                        # Größe des Bildes
+        image_path = get_image_path("Microstrip.png")
+        image_size = (350, 150)
 
         super().__init__(
             parent,

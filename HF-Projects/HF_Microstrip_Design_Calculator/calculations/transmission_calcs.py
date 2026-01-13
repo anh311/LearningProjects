@@ -5,7 +5,7 @@ import numpy as np
 
 def transmission_line_calculate_Z(Er, h_mm, w_mm):
     """
-    Berechnet die charakteristische Impedanz  einer Mikrostreifenleitung nach Hammerstad.
+    Berechnet die charakteristische Impedanz einer Mikrostreifenleitung nach Hammerstad.
     
     Parameter:
         Er   : float - relative Permittivität des Substrats
