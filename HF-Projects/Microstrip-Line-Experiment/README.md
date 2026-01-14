@@ -1,20 +1,19 @@
 # Microstrip Line Experiment
 
 ## Goal
-- Understand the behavior of λ/4 and λ/2 transformers
-- Verify their basic properties
-- Observe their effect on signal transmission
+- See how λ/4 and λ/2 transformers behave
+- Check their basic properties
+- Observe what they do to signal transmission
 
 ## Setup
-- FR4 board with single-sided copper, ~1.5 mm thick
-- 50 Ω main microstrip line, ~3mm wide
-- λ/4 and λ/2 transformer / resonator (3mm wide) connected directly to the main line 
-- Measurement of S21 using a LiteVNA
+- FR4 board with single-sided copper (~1.5 mm thick)
+- 50 Ω main microstrip line (~3 mm wide)
+- λ/4 and λ/2 transformers / resonators (3 mm wide) hooked up to the main line
+- Measure S21 using a LiteVNA
 
 ## Theory
-- λ/4 transformers are used for impedance matching
-- A λ/4 line transforms an open circuit into a short circuit and vice versa
-- λ/2 lines repeat the impedance of the load
+- A λ/4 line flips Open ↔ Short
+- A λ/2 line keeps the load impedance the same
 - Resonance effects occur at specific frequencies
 
 ## Measurements
@@ -48,13 +47,13 @@
      - Shorted ~2 cm microstrip
      - At 1 GHz: the λ/4 line transforms the short into an open → S21 ≈ -0.5 dB (acts like a **band-pass**)
      - At 2 GHz: the λ/2 line transforms the short into a short → S21 ≈ -23 dB (acts like a **band-stop / notch filter**)
-     - Behavior matches theoretical expectations
+     - Matches what theory says
 
 
 3. **Measurement 3**
    - **Setup:**
      
-       λ/4 transformer (~2 cm @ 1 GHz) with **open end** (same as Measurement 2, but the end is now open)
+       λ/4 transformer (~2 cm @ 1 GHz) with **open end** (same as Measurement 2, just end is open now)
    - **Action:** Measure S21
      
        Measure S21
@@ -63,12 +62,12 @@
    - **Observation / Note:**
      - At 1 GHz: λ/4 line transforms the open to a short → S21 ≈ -23 dB (**band-stop / notch**)  
      - At 2 GHz: λ/2 line transforms the open to an open → S21 ≈ -1.2 dB (**band-pass**)  
-     - Behavior matches theoretical expectations: the effect is reversed compared to the shorted end measurement
+     - Effect is reversed compared to shorted end; theory matches
 
 4. **Measurement 4**
    - **Setup:**
 
-      2x λ/4 transformer (~2 cm @ 1 GHz) with shorted end with 1mm gap inbetween
+      2x λ/4 transformers (~2 cm @ 1 GHz) with shorted ends, 1 mm gap in between
      
       <img src="image/2xshort.jpeg" alt="transmission line" width="500"/>
    - **Action:**
@@ -80,13 +79,13 @@
      - Flanks of resonance become steeper due to coupling
      - Bandwidth slightly narrower than single line
      - Open ↔ Short behavior still holds
-     - Overall transmission matches theoretical expectations
+     - Overall transmission looks like theory predicts
 
 ## End Note
 - All measurements behave as expected
 - **Single λ/4 line**: transforms Open ↔ Short, as theory predicts
 - **Single λ/2 line**: transforms Open → Open and Short → Short
-- **λ/4 line alongside the main line**:
+- **λ/4 line**:
   - **Short-ended:** behaves like a parallel resonant circuit → dips (band-stop)
   - **Open-ended:** behaves like a series resonant circuit → peaks (band-pass)
-- Overall, the experimental results match theoretical expectations
+- Overall, experiment matches theory
