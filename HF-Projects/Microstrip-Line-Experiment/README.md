@@ -70,7 +70,7 @@
 
       2x λ/4 transformer (~2 cm @ 1 GHz) with shorted end with 1mm gap inbetween
      
-      <img src="image/2xshort.png" alt="transmission line" width="500"/>
+      <img src="image/2xshort.jpeg" alt="transmission line" width="500"/>
    - **Action:**
      
        Measure S21
@@ -81,3 +81,12 @@
      - Bandwidth slightly narrower than single line
      - Open ↔ Short behavior still holds
      - Overall transmission matches theoretical expectations
+
+## End Note
+- All measurements behave as expected
+- **Single λ/4 line**: transforms Open ↔ Short, as theory predicts
+- **Single λ/2 line**: transforms Open → Open and Short → Short
+- **λ/4 line alongside the main line**:
+  - **Short-ended:** behaves like a parallel resonant circuit → dips (band-stop)
+  - **Open-ended:** behaves like a series resonant circuit → peaks (band-pass)
+- Overall, the experimental results match theoretical expectations
