@@ -1,4 +1,4 @@
-# Wilkinson Power Divider with Microstrip (FAILED – needs a slightly different structure and SMD resistor)
+# Wilkinson Power Divider with Microstrip (FAILED – my structure was bad and SMD resistor needed)
 
 ## Goal
 - Try building a Wilkinson Power Divider at 1 GHz
@@ -17,7 +17,7 @@
 - Isolation resistor ensures that the outputs don’t interfere with each other
 - The λ/4 lines transform impedances to make everything match nicely
 
-<img src="image/Wilkinson_Power_Divider.png" alt=" Wilkinson Power Divider" width="500"/>
+    <img src="image/Wilkinson_Power_Divider.png" alt=" Wilkinson Power Divider" width="500"/>
 
 ## Measurements
 
