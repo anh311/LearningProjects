@@ -13,7 +13,7 @@
 - Note:
    - Measurements are a bit rough because the microstrip lines are cut by hand, introducing some inaccuracies
    - The FR4 board doesn't have an exact ε_r; it's somewhere between the typical FR4 range (~4.3–4.7), so results may vary slightly
-   - Simulation to this Setup: [Microstrip Lines and λ Transformer Simulation](HF-Simulations_openEMS/MicrostripLinesAndλTransformer_Simulation)
+   - Simulation to this Setup: [Microstrip Lines and λ Transformer Simulation](../../HF-Simulations_openEMS/MicrostripLinesAndLambdaTransformer_Simulation)
 
 ## Theory
 - A λ/4 line flips Open ↔ Short
