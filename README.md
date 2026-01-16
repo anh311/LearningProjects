@@ -18,3 +18,11 @@ The HF-Projects folder contains experiments and projects related to **high-frequ
 - Other HF-related experiments and projects under development  
 
 Explore the folder here: [HF-Projects](HF-Projects)
+
+## MCU Basics
+
+The MCU-Basics folder contains experiments and projects related to **microcontrollers**, focusing on **hands-on electronics and embedded programming**. Projects are designed to cover the fundamentals.
+
+The goal is to **explore, experiment, and document** all the core MCU concepts using **ESP32** and **Arduino**, building a solid foundation in embedded systems.
+
+Explore the folder here: [MCU-Basics](MCU-Basics)
