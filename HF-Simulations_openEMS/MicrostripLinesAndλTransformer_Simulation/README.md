@@ -1,6 +1,7 @@
 # Microstrip Lines and λ Transformer Simulation
 
-This simulation replicates the **Microstrip Line Experiment**: [Microstrip Lines and λ Transformer](HF-Projects/Microstrip Lines and λ Transformer)
+This simulation replicates the **Microstrip Line Experiment**: [Microstrip Lines and λ Transformer](HF-Projects/MicrostripLineAndλTransformer)
+
 
 ## Goal
 - Simulate λ/4 and λ/2 transformers on a microstrip line
