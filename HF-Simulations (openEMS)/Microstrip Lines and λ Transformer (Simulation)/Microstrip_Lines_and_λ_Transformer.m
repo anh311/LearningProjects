@@ -37,7 +37,7 @@ CSX = DefineRectGrid( CSX, 1e-3, mesh );
 F0=1.75e9;
 Fc=1.25e9;
 %%default init with 1e9 max. timesteps and -50dB end-criteria
-FDTD = InitFDTD('NrTS', 1e6, 'EndCriteria', 1e-4);
+FDTD = InitFDTD('NrTS', 3e5, 'EndCriteria', 1e-4);
 FDTD = SetGaussExcite(FDTD,F0,Fc);
 FDTD = SetBoundaryCond(FDTD, {'PML_8' 'PML_8' 'PML_8' 'PML_8' 'PML_8' 'PML_8'});
 

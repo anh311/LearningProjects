@@ -22,9 +22,18 @@
 ## Measurements
 
 - **Setup:**
-
+    <img src="image/Divider.jpeg" alt=" Wilkinson Power Divider" width="500"/>
    
 - **Action:**
-    - Measure S21,S31,S11
-- **Observation / Note:**
+    Measure S21,S31,S11
+    Port 2
+    <img src="image/1PORT.png" alt=" Wilkinson Power Divider" width="500"/>
+    Port 3
+    <img src="image/2PORT.png" alt=" Wilkinson Power Divider" width="500"/>
+     
+    
+- **Observation / Note:** 
+    - Used copper tape + wire resistor instead of proper 100 Ω SMD → poor match
+    - S11 very high (-1…-6 dB)
+    - S21/S31 too low (-9…-14 dB) because power is reflected instead of split
       
