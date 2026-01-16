@@ -52,7 +52,7 @@ RunOpenEMS( "temp", "Microstrip.xml" );
 
 % Display simulation
 close all
-f = linspace( 0, 3e9, 400 );
+f = linspace( 0.5e9, 3e9, 400);
 
 port = calcPort( port, "temp", f, 'RefImpedance', 50);
 s11 = port{1}.uf.ref./ port{1}.uf.inc;
