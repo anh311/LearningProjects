@@ -6,7 +6,7 @@ All projects in this folder are developed and tested using **VS Code with Platfo
 
   Each subfolder represents a small project e.g., GPIO, PWM, sensors, communication protocols, or integrated projects.  
 
-## Workflow and Concepts
+## Concepts
 
 **Board selection**:  
   When creating a new project, the chosen board defines the **hardware mapping**:
