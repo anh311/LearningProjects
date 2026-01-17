@@ -30,7 +30,7 @@ Debouncing is basically just **filtering out those bounces** so that a single pr
 ## Example with non-blocking Timer and 2 different Debouncing methods
 
 ###Setup:
-     <img src="LED_Button_Debounce_Timer.jpegpg" alt="Setup" width="500"/>
+     <img src="LED_Button_Debounce_Timer.jpeg" alt="Setup" width="500"/>
 
 
 1. **Multiple triggers** 
