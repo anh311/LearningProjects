@@ -29,8 +29,7 @@ Debouncing is basically just **filtering out those bounces** so that a single pr
 
 ## Example with non-blocking Timer and 2 different Debouncing methods
 
-Setup:
-
+###Setup:
      <img src="LED_Button_Debounce_Timer.jpegpg" alt="Setup" width="500"/>
 
 
@@ -138,5 +137,3 @@ Setup:
     - This means that if you press the button **again too quickly** before the timer expires, the press won’t be registered, no matter how long you hold it.  
     - In other words, you must wait at least one full debounce delay before the next press can trigger an event.  
     - This is a trade-off: it **prevents multiple triggers during a long press**, but also **blocks very fast repeated presses**.
-
-
