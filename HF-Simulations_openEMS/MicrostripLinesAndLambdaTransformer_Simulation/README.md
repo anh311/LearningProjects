@@ -23,26 +23,21 @@ This simulation replicates the **Microstrip Line Experiment**: [Microstrip Lines
 
 ## Simulation Observations
 
-1. **Measurement 1**
+1. **Measurement**
     - **Setup:**
-    
         50 Ω microstrip
     
-<<<<<<< HEAD
-        <img src="img/Microstrip_Line.png" alt="transmission line" width="500"/>
-=======
-         <img src="img/Microstrip_Line_geo.png" alt="transmission line" width="500"/>
->>>>>>> 2324c6bee427da5b6b4bc3a45c0d2c58a99951ee
+        <img src="img/Microstrip_Line_geo.png" alt="transmission line" width="500"/>
     
     - **Action:**
         Simulate S21,S11
       
-        <img src="img/Microstrip_Line_more_accurate.png" alt="transmission line" width="500"/>
+        <img src="img/Microstrip_Line.png" alt="transmission line" width="500"/>
     - **Observation / Note:**
     
         transmission line is matched to 50 Ω
 
-2. **Measurement 2**
+2. **Measurement**
    - **Setup:**
      
        λ/4 transformer (4cm @1GHz) with shorted end
@@ -56,11 +51,11 @@ This simulation replicates the **Microstrip Line Experiment**: [Microstrip Lines
        <img src="img/Microstrip_lambda4_short.png" alt="transmission line" width="500"/>
        
    - **Observation / Note:**
-     - At 1 GHz: the λ/4 line transforms the short into an open → S21 ≈ -0.5 dB (acts like a **band-pass**)
-     - At 2 GHz: the λ/2 line transforms the short into a short → S21 ≈ -23 dB (acts like a **band-stop / notch filter**)
+     - At ~1 GHz: the λ/4 line transforms the short into an open → S21 ≈ -2 dB (acts like a **band-pass**)
+     - At ~2 GHz: the λ/2 line transforms the short into a short → S21 ≈ -40 dB (acts like a **band-stop / notch filter**)
      - Matches what theory says
 
-3. **Measurement 3**
+3. **Measurement**
    - **Setup:**
      
        λ/4 transformer (4cm @1GHz) with open end
@@ -74,8 +69,8 @@ This simulation replicates the **Microstrip Line Experiment**: [Microstrip Lines
        <img src="img/Microstrip_lambda4_open.png" alt="transmission line" width="500"/>
        
    - **Observation / Note:**
-     - At 1 GHz: the λ/4 line transforms open into an short → S21 ≈ -0.5 dB (acts like a **band-stop / notch filter**)
-     - At 2 GHz: the λ/2 line transforms the open into a open → S21 ≈ -23 dB (acts like a **band-pass**)
+     - At 1 GHz: the λ/4 line transforms open into an short → S21 ≈ -2 dB (acts like a **band-stop / notch filter**)
+     - At 2 GHz: the λ/2 line transforms the open into a open → S21 ≈ -43 dB (acts like a **band-pass**)
      - Matches what theory says
 
 ## End Note
