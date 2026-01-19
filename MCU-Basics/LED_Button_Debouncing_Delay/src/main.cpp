@@ -28,7 +28,7 @@ void loop() {
 unsigned long lastDebounceTime = 0;
 bool lastButtonState = HIGH;
 bool buttonState = HIGH;
-bool LEDstatus = HIGH;
+
 
 void setup() {
   Serial.begin(9600);

@@ -23,19 +23,37 @@ This simulation replicates the **Microstrip Line Experiment**: [Microstrip Lines
 
 ## Simulation Observations
 
-**Measurement 1**
-- **Setup:**
-  
-    50 Ω microstrip
-  
-     <img src="img/Microstrip_Line_more_accurate.png" alt="transmission line" width="500"/>
-   
-- **Action:**
-  
-    Simulate S21,S11
-- **Observation / Note:**
-  
-    transmission line is matched to 50 Ω
+1. **Measurement 1**
+    - **Setup:**
+    
+        50 Ω microstrip
+    
+        <img src="img/Microstrip_Line_more_accurate.png" alt="transmission line" width="500"/>
+    
+    - **Action:**
+        Simulate S21,S11
+        <img src="img/Microstrip_Line_geo.png" alt="transmission line" width="500"/>
+    - **Observation / Note:**
+    
+        transmission line is matched to 50 Ω
 
-## Conclusion
+2. **Measurement 2**
+   - **Setup:**
+     
+       λ/4 transformer (4cm @1GHz) with shorted end
+   
+       <img src="img/Microstrip_lambda4_short_geo.png" alt="transmission line" width="500"/>
+     
+   - **Action:**
+     
+       Measure S21, S11
+     
+       <img src="img/SHORT.png" alt="transmission line" width="500"/>
+       
+   - **Observation / Note:**
+     - At 1 GHz: the λ/4 line transforms the short into an open → S21 ≈ -0.5 dB (acts like a **band-pass**)
+     - At 2 GHz: the λ/2 line transforms the short into a short → S21 ≈ -23 dB (acts like a **band-stop / notch filter**)
+     - Matches what theory says
+
+## End Note
 

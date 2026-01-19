@@ -1,6 +1,6 @@
 # Debouncing and Timers
 
-This project is all about learning how to use **timers** on microcontrollers and how to deal with **button bouncing**. I tried a couple of different approaches and looked at the problems that can happen with buttons and LEDs.
+This project is about learning how to use timers on microcontrollers and how to deal with **button bouncing**. I tried a couple of different approaches and looked at the problems that can happen with buttons.
 
 ## What’s the problem with timers?
 
