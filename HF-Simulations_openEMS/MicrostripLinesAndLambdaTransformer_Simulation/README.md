@@ -28,7 +28,7 @@ This simulation replicates the **Microstrip Line Experiment**: [Microstrip Lines
     
         50 Ω microstrip
     
-        <img src="img/Microstrip_Line_more_accurate.png" alt="transmission line" width="500"/>
+        <img src="img/Microstrip_Line.png" alt="transmission line" width="500"/>
     
     - **Action:**
         Simulate S21,S11
@@ -48,11 +48,29 @@ This simulation replicates the **Microstrip Line Experiment**: [Microstrip Lines
      
        Measure S21, S11
      
-       <img src="img/SHORT.png" alt="transmission line" width="500"/>
+       <img src="img/Microstrip_lambda4_short.png" alt="transmission line" width="500"/>
        
    - **Observation / Note:**
      - At 1 GHz: the λ/4 line transforms the short into an open → S21 ≈ -0.5 dB (acts like a **band-pass**)
      - At 2 GHz: the λ/2 line transforms the short into a short → S21 ≈ -23 dB (acts like a **band-stop / notch filter**)
+     - Matches what theory says
+
+3. **Measurement 3**
+   - **Setup:**
+     
+       λ/4 transformer (4cm @1GHz) with open end
+   
+       <img src="img/Microstrip_lambda4_open_geo.png" alt="transmission line" width="500"/>
+     
+   - **Action:**
+     
+       Measure S21, S11
+     
+       <img src="img/Microstrip_lambda4_open.png" alt="transmission line" width="500"/>
+       
+   - **Observation / Note:**
+     - At 1 GHz: the λ/4 line transforms open into an short → S21 ≈ -0.5 dB (acts like a **band-stop / notch filter**)
+     - At 2 GHz: the λ/2 line transforms the open into a open → S21 ≈ -23 dB (acts like a **band-pass**)
      - Matches what theory says
 
 ## End Note

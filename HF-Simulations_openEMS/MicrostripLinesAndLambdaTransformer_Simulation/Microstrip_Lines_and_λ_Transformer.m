@@ -12,8 +12,12 @@ CSX = SetMaterialProperty( CSX, 'FR4', 'Epsilon', 4.2); % FR4 Epsilon
 
 %define geometry
 CSX = AddBox(CSX, "FR4",0 ,[-50, -30, 0],[50, 30, 1.5]); %FR4
-CSX = AddBox(CSX, "copper",0 ,[-50, -30, 0],[50, 30, -0.035]); %GND
-CSX = AddBox(CSX, "copper",0 ,[-50, 10, 1.5],[50, 13, 1.535]); %Microstrip
+CSX = AddBox(CSX, "copper",1 ,[-50, -30, 0],[50, 30, -0.035]); %GND
+CSX = AddBox(CSX, "copper",1 ,[-50, 10, 1.5],[50, 13, 1.535]); %Microstrip
+
+%define Ports
+[CSX, port{1}]=AddLumpedPort(CSX, 1, 1, 50, [-50, 9, -0.1], [-50, 14, 1.635], [0, 0, 1], true);
+[CSX, port{2}]=AddLumpedPort(CSX, 1, 2, 50, [50, 9, -0.1], [50, 14, 1.635], [0, 0, 1], false);
 
 %mesh
 mesh = DetectEdges(CSX);
@@ -22,16 +26,14 @@ mesh.x =[mesh.x -65 65];
 mesh.y =[mesh.y -45 45];
 mesh.z =[mesh.z -10 10];
 %max_res~lambda/10, ratio~1.2 for stable computing
-mesh =SmoothMesh(mesh,2.5,1.2);
+a=1
+mesh =SmoothMesh(mesh,1.5 ,1.2);
 
 
 %define Grid
 %mash in mm (FDTD)
 CSX = DefineRectGrid( CSX, 1e-3, mesh );
 
-%define Ports
-[CSX, port{1}]=AddLumpedPort(CSX, 1, 1, 50, [-50, 7, 0.5], [-50, 16, 4.535], [0, 0, 1], true);
-[CSX, port{2}]=AddLumpedPort(CSX, 1, 2, 50, [50, 7, 0.5], [50, 16, 4.535], [0, 0, 1], false);
 
 %FDTD 0 GHz - 3 GHz
 F0=1.75e9;
