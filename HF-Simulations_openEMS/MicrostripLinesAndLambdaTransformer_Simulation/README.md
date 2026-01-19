@@ -28,11 +28,12 @@ This simulation replicates the **Microstrip Line Experiment**: [Microstrip Lines
     
         50 Ω microstrip
     
-        <img src="img/Microstrip_Line_more_accurate.png" alt="transmission line" width="500"/>
+         <img src="img/Microstrip_Line_geo.png" alt="transmission line" width="500"/>
     
     - **Action:**
         Simulate S21,S11
-        <img src="img/Microstrip_Line_geo.png" alt="transmission line" width="500"/>
+      
+        <img src="img/Microstrip_Line_more_accurate.png" alt="transmission line" width="500"/>
     - **Observation / Note:**
     
         transmission line is matched to 50 Ω
