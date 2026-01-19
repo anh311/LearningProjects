@@ -22,7 +22,7 @@
 
 ## Measurements
 
-1. **Measurement 1**
+1. **Measurement**
    - **Setup:**
    
        50 Ω microstrip
@@ -34,7 +34,7 @@
    - **Observation / Note:**
       - transmission line is okay matched to 50 Ω
 
-2. **Measurement 2**
+2. **Measurement**
    - **Setup:**
      
        λ/4 transformer (~4cm @1GHz) with shorted end
@@ -54,7 +54,7 @@
      - Matches what theory says
 
 
-3. **Measurement 3**
+3. **Measurement**
    - **Setup:**
      
        λ/4 transformer (~4 cm @ 1 GHz) with **open end** (same as Measurement 2, just end is open now)
@@ -68,7 +68,7 @@
      - At 2 GHz: λ/2 line transforms the open to an open → S21 ≈ -1.2 dB (**band-pass**)  
      - Effect is reversed compared to shorted end; theory matches
 
-4. **Measurement 4**
+4. **Measurement**
    - **Setup:**
 
       2x λ/4 transformers (~4 cm @ 1 GHz) with shorted ends, 1 mm gap in between
