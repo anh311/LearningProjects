@@ -1,17 +1,12 @@
 #include "PIN.h"
 #include <Arduino.h>
 
-volatile bool press = false;
+volatile bool pressFlag = false;    
+unsigned long lastPressTime = 0;    
+const unsigned long debounceDelay = 200; 
 
-void IRAM_ATTR readSensor(){
-    static uint32_t lastTime = 0;
-    uint32_t now = micros();  // genau, schnelle Zeit
-
-    if (now - lastTime > 200000) { // 200 ms Debounce
-        press = true;             // Event setzen
-        lastTime = now;           // Zeit merken
-    }
-
+void IRAM_ATTR readSensor() {
+    pressFlag = true; 
 }
 
 void setupInterrupts() {
@@ -20,9 +15,14 @@ void setupInterrupts() {
 }
 
 bool isButtonPressed() {
-     if (press) {
-        press = false;            
-        return true;
+    if (pressFlag) {
+        pressFlag = false; 
+
+        unsigned long now = millis();
+        if (now - lastPressTime > debounceDelay) {
+            lastPressTime = now; 
+            return true;         
+        }
     }
     return false;
 }

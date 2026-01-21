@@ -8,9 +8,8 @@ Setup:
 ## How It Works
 
 - Button press triggers an **interrupt** immediately (HIGH → LOW).  
--  ISR (`readSensor()`) sets a **flag** only if enough time has passed (**debouncing in the ISR**).  
-  - Avoids the problem where a fast ISR sets the flag multiple times before the loop processes it.
-  - Ensures **1 button press = 1 event**, even if the button mechanically bounces.
+-  ISR (`readSensor()`) sets a **flag**  
+- Ensures **1 button press = 1 event**, even if the button mechanically bounces.
 - Main loop checks the flag via `isButtonPressed()` and reacts (reads DHT11, prints values).  
 - Software debounce prevents multiple triggers from quick or bouncing presses.  
 
