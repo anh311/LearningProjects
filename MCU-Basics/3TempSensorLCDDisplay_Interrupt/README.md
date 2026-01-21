@@ -3,13 +3,20 @@
 A project to read a **button with an interrupt** while also reading a **DHT11 sensor** every 300 seconds.
 
 Setup:
-    <img src="DHT11.jpeg" alt="Setup" width="500"/>
+
+<img src="DHT11.jpeg" alt="Setup" width="500"/>
 
 ## How It Works
 
 - Button press triggers an **interrupt** immediately (HIGH → LOW).  
+<<<<<<< HEAD
 -  ISR (`readSensor()`) sets a **flag**  
 - Ensures **1 button press = 1 event**, even if the button mechanically bounces.
+=======
+-  ISR (`readSensor()`) sets a **flag** only if enough time has passed (**debouncing in the ISR**).  
+    - Avoids the problem where a fast ISR sets the flag multiple times before the loop processes it.
+    - Ensures **1 button press = 1 event**, even if the button mechanically bounces.
+>>>>>>> d2d6e316612842ab162b08dc2eedab8538c7a7b0
 - Main loop checks the flag via `isButtonPressed()` and reacts (reads DHT11, prints values).  
 - Software debounce prevents multiple triggers from quick or bouncing presses.  
 
