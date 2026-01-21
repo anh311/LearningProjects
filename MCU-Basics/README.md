@@ -8,7 +8,7 @@ All projects in this folder are developed and tested using **VS Code with Platfo
 
 ## Concepts
 
-**Board selection**:  
+### Board selection:  
   When creating a new project, the chosen board defines the **hardware mapping**:
    
   - Board definition / board setup = purely hardware mapping
@@ -19,11 +19,39 @@ All projects in this folder are developed and tested using **VS Code with Platfo
   - CPU, memory, flash size, and bootloader ... – fundamental hardware features
 
 
-**Framework**:  
+### Framework:  
   The framework (e.g., Arduino) provides a **software layer** that allows you to use high-level functions like `digitalWrite`, `analogRead`, `Serial.print`, without manually configuring hardware registers.  
   It abstracts low-level hardware details and provides libraries for sensors, displays, communication, and more.
 
-**Folder Structure**
+1. **Startup Code**
+    - Prepares the CPU and memory (stack, heap, registers) before your program runs.
+    - Initializes basic system hardware required for standard C functions (e.g., UART for `printf()`).
+    - Calls your main application entry point (`app_main()` or `setup()/loop()`).
+2. **Hardware Setup**
+    - Configures microcontroller peripherals:
+      - GPIO pins
+      - Timers
+      - ADC/DAC
+      - Communication interfaces (UART, SPI, I2C)
+      - Wi-Fi / Bluetooth stacks
+    - Provides easy-to-use APIs to interact with the hardware, so you don’t need to manipulate registers manually.
+
+3. **Linker Scripts & Memory Layout**
+    - Determines where different parts of your program reside in flash and RAM.
+    - Ensures that:
+      - Bootloader
+      - Partition table
+      - Application binary
+      - Filesystem (SPIFFS, LittleFS, NVS)  
+      are placed at the correct addresses.
+    - Prevents memory overlap and boot issues.
+
+4. **Flashing Support**
+    - Generates all necessary binary files (`.bin`) for the ESP32.
+    - Provides tools to flash these binaries to the device.
+    - Handles correct flashing addresses automatically.
+
+## Folder Structure
 - **.pio/**: PlatformIO internal build folder (compiled binaries, temporary files) 
 - **.vscode/**: VS Code project settings and debug configurations  
 - **include/**: 
