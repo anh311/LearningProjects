@@ -23,8 +23,8 @@ CSX = AddBox(CSX,"Copper", 1,[-1.5,-30,-0],[1.5,-29,1.5]); %short
 CSX = AddBox(CSX,"Copper", 1,[2.5,-30,-0],[5.5,-29,1.5]); %short
 
 %define Ports
-[CSX, port{1}]=AddLumpedPort(CSX, 1, 1, 50, [-50, 9, -1], [-50, 14, 1.5], [0, 0, 1], true);
-[CSX, port{2}]=AddLumpedPort(CSX, 1, 2, 50, [50, 9, -1], [50, 14, 1.5], [0, 0, 1], false);
+[CSX, port{1}]=AddLumpedPort(CSX, 2, 1, 50, [-50, 9.9, -0.1], [-50, 13.1, 1.6], [0, 0, 1], true);
+[CSX, port{2}]=AddLumpedPort(CSX, 2, 2, 50, [50, 9.9, -0.1], [50, 13.1, 1.6], [0, 0, 1], false);
 
 %mesh
 mesh = DetectEdges(CSX);
@@ -40,7 +40,7 @@ CSX = DefineRectGrid( CSX, 1e-4, mesh );
 %FDTD 0 GHz - 3 GHz
 F0 = 1.75e9;
 Fc = 1.25e9;
-FDTD = InitFDTD("NRTS",3e5, "EndCriteria",1e-5);
+FDTD = InitFDTD("EndCriteria",1e-4);
 FDTD = SetGaussExcite(FDTD,F0,Fc);
 FDTD = SetBoundaryCond(FDTD, {'PML_8' 'PML_8' 'PML_8' 'PML_8' 'PML_8' 'PML_8'})
 
