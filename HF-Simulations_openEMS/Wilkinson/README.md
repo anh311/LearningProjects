@@ -26,35 +26,36 @@
     <img src="img/Wilkinson.png" alt=" Wilkinson Power Divider" width="500"/>
    
 - **Action:**
-    simulate S21,S31,S11
   
-    Port 2
+    - simulate S21,S31,S11
   
-    <img src="img/S21_S11.png.png" alt=" Wilkinson Power Divider" width="500"/>
-    
-    Port 3
-  
-    <img src="img/S31_S11.png.png" alt=" Wilkinson Power Divider" width="500"/>
+        Port 2
+      
+        <img src="img/S21_S11.png" alt=" Wilkinson Power Divider" width="500"/>
+        
+        Port 3
+      
+        <img src="img/S31_S11.png" alt=" Wilkinson Power Divider" width="500"/>
 
-    simulate S12,S32,S22
+    - simulate S12,S32,S22
   
-    Port 1
-  
-    <img src="img/S12_S22.png.png" alt=" Wilkinson Power Divider" width="500"/>
-    
-    Port 3
-  
-    <img src="img/S31_S11.png.png" alt=" Wilkinson Power Divider" width="500"/>
+        Port 1
+      
+        <img src="img/S12_S22.png" alt=" Wilkinson Power Divider" width="500"/>
+        
+        Port 3
+      
+        <img src="img/S32_S22.png" alt=" Wilkinson Power Divider" width="500"/>
 
-    simulate S13,S23,S33
+    - simulate S13,S23,S33
   
-    Port 1
-  
-    <img src="img/S13_S33.png.png" alt=" Wilkinson Power Divider" width="500"/>
-    
-    Port 3
-  
-    <img src="img/S23_S33.png.png" alt=" Wilkinson Power Divider" width="500"/>
+        Port 1
+      
+        <img src="img/S13_S33.png" alt=" Wilkinson Power Divider" width="500"/>
+        
+        Port 3
+      
+        <img src="img/S23_S33.png" alt=" Wilkinson Power Divider" width="500"/>
      
     
 - **Observation / Note:** 
