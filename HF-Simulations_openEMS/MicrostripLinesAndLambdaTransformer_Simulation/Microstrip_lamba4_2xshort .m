@@ -25,8 +25,8 @@ CSX = AddBox(CSX,"Copper",1,[-50, -30, 0],[50, 30, 0]);  %GND
 CSX = AddBox(CSX,"Copper", 1,[-50, 10, 1.5],[50, 13, 1.5]); %Line
 CSX = AddBox(CSX,"Copper", 1,[-1.5,-30,1.5], [1.5,11, 1.5]); %Lambda/4
 CSX = AddBox(CSX,"Copper", 1,[-1.5,-30,-0],[1.5,-29,1.5]); %short
-CSX = AddBox(CSX,"Copper", 1,[2.5,-30,1.5], [5.5,11, 1.5]); %Lambda/4
-CSX = AddBox(CSX,"Copper", 1,[2.5,-30,-0],[5.5,-29,1.5]); %short
+CSX = AddBox(CSX,"Copper", 1,[5.5,-30,1.5], [8.5,11, 1.5]); %Lambda/4
+CSX = AddBox(CSX,"Copper", 1,[5.5,-30,-0],[8.5,-29,1.5]); %short
 %define mesh
 mesh.x = SmoothMeshLines([-60 -50 0 50 60], resolution, 1.3);
 mesh.y = SmoothMeshLines([-40 -30 10 13 30 40 ], resolution, 1.3);
