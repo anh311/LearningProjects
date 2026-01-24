@@ -10,6 +10,8 @@
 - 50 Ω main microstrip line (~3 mm wide)
 - λ/4 microstrip section: ~3.7 mm long, 1.5 mm wide (~70 Ω)
 - 100 Ω wire resistor
+- Wilkinson
+- Simulation to this Setup: [Wilkinson Power Divider](../../HF-Simulations_openEMS/Wilkinson)
 
 ## Theory
 - A Wilkinson Power Divider splits input power evenly between two outputs (~-3 dB each)
