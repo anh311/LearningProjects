@@ -1,5 +1,4 @@
-# Wilkinson Power Divider with Microstrip (FAILED – my structure was bad and SMD resistor needed)
-
+# Wilkinson Power Divider with Microstrip
 ## Goal
 - Try simulate a Wilkinson Power Divider at 1 GHz
 - Check how it splits power and matches the ports
