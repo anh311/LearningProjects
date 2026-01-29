@@ -1,0 +1,46 @@
+/**
+ * Note: The returned array must be malloced, assume caller calls free().
+ */
+typedef struct {
+    int Wert;
+    int Bit;
+}Zahl;
+
+int countBits(int a){
+    int count=0;
+    while (a>0){
+        if((a&1)==1) count ++;
+        a=a>>1;
+    }
+    return count;
+}
+
+int compare(const void* a, const void* b){
+    const Zahl* A = (const Zahl*) a;
+    const Zahl* B = (const Zahl*) b;
+    if(A->Bit<B->Bit)return(-1);
+    if(A->Bit>B->Bit)return(1);
+    if(A->Wert>B->Wert)return (1);
+    if(A->Wert<B->Wert)return (-1);
+    return 1;
+}
+int* sortByBits(int* arr, int arrSize, int* returnSize) {
+    *returnSize =  arrSize;
+    Zahl* result = malloc(arrSize*sizeof(Zahl));
+    int *bit = calloc(arrSize, sizeof(int));
+
+    for (int i = 0; i<arrSize; i++){
+        result[i].Wert=arr[i];
+        result[i].Bit=countBits(arr[i]);
+        
+    }
+    qsort(result,arrSize,sizeof(Zahl),compare);
+
+    for (int i = 0; i<arrSize; i++){
+        bit[i]=result[i].Wert;
+    }
+    free(result);
+    
+    return bit;
+
+}
