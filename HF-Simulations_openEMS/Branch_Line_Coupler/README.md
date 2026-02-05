@@ -9,6 +9,7 @@
 - 50 Ω main microstrip line (3 mm wide)
 - λ/4 microstrip section: 37 mm long, 6.3 mm wide (~35 Ω)
 
+    <img src="img/Branch.png" alt="Branch LIne Coupler" width="500"/>
 
 ## Theory
 
@@ -19,7 +20,6 @@
     - The horizontal (series) arms must have an impedance of $Z_0 / \sqrt{2} \approx 35.4\ \Omega$.
     - The vertical (shunt) arms must have an impedance of $Z_0 = 50\ \Omega$.
 
-    <img src="img/Branch.png" alt="Branch LIne Coupler" width="500"/>
 
 ## Simulations
 
