@@ -8,7 +8,7 @@
 ## Setup
 - FR4 board with single-sided copper (~1.5 mm thick)
 - 50 Ω main microstrip line (~3 mm wide)
-- λ/4 microstrip section: ~3.7 mm long, 1.5 mm wide (~70 Ω)
+- λ/4 microstrip section: ~37 mm long, 1.5 mm wide (~70 Ω)
 - 100 Ω wire resistor
 - Wilkinson
 - Simulation to this Setup: [Wilkinson Power Divider](../../HF-Simulations_openEMS/Wilkinson)
