@@ -1,4 +1,4 @@
-# Wilkinson Power Divider with Microstrip (FAILED – structure was bad and SMD resistor needed)
+# Wilkinson Power Divider with Microstrip (FAILED – structure was bad)
 
 ## Goal
 - Try building a Wilkinson Power Divider at 1 GHz
@@ -25,7 +25,7 @@
 
 - **Setup:**
   
-    <img src="image/Divider.jpeg" alt=" Wilkinson Power Divider" width="500"/>
+    <img src="image/Wilk.jpeg" alt=" Wilkinson Power Divider" width="500"/>
    
 - **Action:**
     Measure S21,S31,S11
