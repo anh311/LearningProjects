@@ -1,6 +1,6 @@
 # MCU Basics
 
-All projects in this folder are developed and tested using **VS Code with PlatformIO**.
+All projects in this folder are developed and tested using VS Code with PlatformIO and STM32CubeIDE with STM32CubeMX.
 
 ## Structure
 
